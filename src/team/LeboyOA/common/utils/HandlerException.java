@@ -18,12 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 import team.LeboyOA.common.handle.Parameter;
 import team.LeboyOA.common.pojos.CommonData;
 import team.LeboyOA.common.pojos.Manager;
-import team.LeboyOA.accessChain.service.LogService;
+//import team.LeboyOA.accessChain.service.LogService;
 
 public class HandlerException implements HandlerExceptionResolver{
 
-	@Autowired
-	private LogService logService;
+	//@Autowired
+	//private LogService logService;
 	
 	@Override
 	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, 
@@ -56,7 +56,7 @@ public class HandlerException implements HandlerExceptionResolver{
 			parameter.getPara().put("exception_origin", request.getServletPath());
 			parameter.getPara().put("exception_type", e.getClass().getName());
 			parameter.getPara().put("create_time", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
-			logService.addExceptionLog(parameter);
+			//logService.addExceptionLog(parameter);
 			System.gc();
 			e.printStackTrace();
 		} catch (IOException io) {

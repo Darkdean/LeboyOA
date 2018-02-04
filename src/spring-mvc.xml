@@ -36,9 +36,9 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 		<property name="maxUploadSize" value="10000000000"/>
 	</bean>
 	
-	<bean id="exceptionResolver" class="com.qxjxt.common.utils.HandlerException"></bean>
+	<bean id="exceptionResolver" class="team.LeboyOA.common.utils.HandlerException"></bean>
 	
-	<bean id="initBean" class="com.qxjxt.common.handle.Config" init-method="init"></bean>
+	<bean id="initBean" class="team.LeboyOA.common.handle.Config" init-method="init"></bean>
 	
 	<!-- freemarker的配置 -->
 	<bean id="freemarkerConfig"
@@ -52,7 +52,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 				<prop key="locale">zh_CN</prop>
 				<prop key="date_format">yyyy-MM-dd</prop>
 				<prop key="number_format">#</prop>
-				<prop key="template_exception_handler">com.qxjxt.common.utils.ViewException</prop>
+				<prop key="template_exception_handler">team.LeboyOA.common.utils.ViewException</prop>
 			</props>
 		</property>
 	</bean>

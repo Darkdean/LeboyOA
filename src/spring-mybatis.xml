@@ -70,7 +70,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 	</tx:advice>
 
 	<aop:config>
-		<aop:pointcut id="transactionPointcut" expression="execution(* com.qxjxt.*.service.serviceImp.*.*(..))" />
+		<aop:pointcut id="transactionPointcut" expression="execution(* team.LeboyOA.*.service.serviceImp.*.*(..))" />
 		<aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
 	</aop:config>
 	
@@ -78,12 +78,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 	<!-- 将Mybaties生成sql的bean对象工厂 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="mapperLocations" value="classpath:com/qxjxt/*/dao/mapping/*.xml" />
+		<property name="mapperLocations" value="classpath:team/LeboyOA/*/dao/mapping/*.xml" />
 	</bean>
 	
 	<!-- 将sql的bean对象工厂转配至接口中 -->
 	<bean id="ServiceDao" class="org.mybatis.spring.mapper.MapperScannerConfigurer"> 
-		<property name="basePackage" value="com.qxjxt.*.dao"/>
+		<property name="basePackage" value="team.LeboyOA.*.dao"/>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 	</bean>
 	
